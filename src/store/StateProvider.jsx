@@ -3,9 +3,9 @@ import StateContext from "./StateContext";
 import { useState } from "react";
 
 const StateProvider = ({ children }) => {
-  let [shoes, setShoes] = useState();
-  let [clothes, setClothes] = useState();
-  let [accessories, setAccessories] = useState();
+  let [shoes, setShoes] = useState([]);
+  let [clothes, setClothes] = useState([]);
+  let [accessories, setAccessories] = useState([]);
 
   const loadShoes = (data) => {
     console.log("llegó la data", data);

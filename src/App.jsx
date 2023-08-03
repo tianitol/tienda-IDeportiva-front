@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import "./App.css";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { useContext, useEffect } from "react";
@@ -14,18 +15,34 @@ import StateContext from "./store/StateContext";
 import axios from "axios";
 
 function App() {
-  let { loadShoes } = useContext(StateContext);
+  let { loadShoes, loadClothes, loadAccessories } = useContext(StateContext);
 
   useEffect(() => {
     axios.defaults.withCredentials = true;
     axios
       .get("http://localhost:3000/api/shoes/")
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         loadShoes(response.data);
       })
       .catch((error) => console.log(error.message));
+
+      axios
+      .get("http://localhost:3000/api/clothes/")
+      .then((response) => {
+        // console.log(response.data);
+        loadClothes(response.data);
+      })
+      .catch((error) => console.log(error.message));
+      axios
+      .get("http://localhost:3000/api/accessories/")
+      .then((response) => {
+        // console.log(response.data);
+        loadAccessories(response.data);
+      })
+      .catch((error) => console.log(error.message));
   }, []);
+
   return (
     <>
       <Router>
