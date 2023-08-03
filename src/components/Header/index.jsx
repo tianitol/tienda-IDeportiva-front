@@ -1,5 +1,12 @@
+import NavBar from '../NavBar';
+
+
 const Header = () => {
-  return <>hola soy el header</>;
+  return (
+    <>
+      <NavBar />
+    </>
+  )
 };
 
 export default Header;
