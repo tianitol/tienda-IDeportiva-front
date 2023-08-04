@@ -64,12 +64,17 @@ function App() {
               path="/accessories"
               element={<Home show={"accessories"} />}
             />
-<Route path="/details/:product/:id" element={<Details />} />
+            <Route path="/details/:product/:id" element={<Details />} />
             <Route path="/contact" element={<Contact />} />
+            <Route
+              path="/somos"
+              element={
+                <h2 style={{ margin: "1em", fontSize: "10em" }}>Tuki Tuki</h2>
+              }
+            />
             <Route path="*" element={<h2>La página no existe</h2>} />
           </Routes>
         )}
-
 
         <Footer />
       </Router>
