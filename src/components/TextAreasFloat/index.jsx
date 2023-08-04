@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 const TextAreasFloat = ({ label, placeholderText, valor }) => {

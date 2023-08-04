@@ -1,8 +1,6 @@
-import { useRef } from "react";
-
+import {  useRef } from "react";
 
 const Search = (props) =>{
-    
     let inputTexto = useRef();
 
     return(
@@ -12,7 +10,7 @@ const Search = (props) =>{
                 <form className="d-flex" rol="search">
                     <div>
                         <input type="text" ref={inputTexto} className="form-control" placeholder="Buscar" aria-label="Search"/>
-                        <input onClick={()=>props.filterShoes(inputTexto.current.value)} type="button" className="btn btn-primary" value="Buscar" />
+                        <input onClick={()=>props.filterAccessories(inputTexto.current.value)} type="button" className="btn btn-primary" value="Buscar" />
                     </div>
                 </form>
             </div>
