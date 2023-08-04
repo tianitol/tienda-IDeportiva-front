@@ -17,6 +17,8 @@ const StateProvider = ({ children }) => {
         brand:"",
         gender:""
   })
+  let [filteredAccessories, setFilteredAccessories] = useState([]);
+
 
   const getShoesName = ()=>{
     return initialState.map(shoe =>shoe.name);
@@ -43,6 +45,9 @@ const StateProvider = ({ children }) => {
     console.log("llegó la data de accessories", data);
     setAccessories(data);
   };
+  const loadFilteredAccessories = (data) =>{
+    setFilteredAccessories(data)
+  }
 
   const initialState = {
     shoes,
@@ -56,6 +61,8 @@ const StateProvider = ({ children }) => {
     loadFilteredShoes,
     loadClothes,
     loadAccessories,
+    loadFilteredAccessories,
+    filteredAccessories
   };
 
   return (
