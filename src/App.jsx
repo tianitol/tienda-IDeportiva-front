@@ -5,6 +5,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { useContext, useEffect } from "react";
 
 import Contact from "./pages/Contact";
+import Details from "./pages/Details";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./pages/Home";
