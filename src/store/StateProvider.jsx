@@ -8,6 +8,7 @@ const StateProvider = ({ children }) => {
   let [accessories, setAccessories] = useState([]);
   let [filteredShoes, setFilteredShoes] = useState([]);
   let [filteredClothes,setFilteredClothes] =useState([]);
+  let [filteredAccessories, setFilteredAccessories] = useState([]);
   /*let [shoe, setShoe] = useState({
         id: "",
         name:"",
@@ -27,8 +28,6 @@ const StateProvider = ({ children }) => {
         description:"",
         image:""
   })
-  let [filteredAccessories, setFilteredAccessories] = useState([]);
-
 
   const getShoesName = ()=>{
     return initialState.map(shoe =>shoe.name);
@@ -65,6 +64,7 @@ const StateProvider = ({ children }) => {
   const loadAccessories = (data) => {
     console.log("llegó la data de accessories", data);
     setAccessories(data);
+    setFilteredAccessories(data)
   };
   const loadFilteredAccessories = (data) =>{
     setFilteredAccessories(data)

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
-const InputFloat = ({ label, valor, tipo }) => {
+const InputFloat = ({ label, valor, tipo, myTitle }) => {
   return (
     <>
       <FloatingLabel
@@ -11,6 +11,7 @@ const InputFloat = ({ label, valor, tipo }) => {
         readOnly
       >
         <Form.Control
+          title={myTitle}
           type={tipo}
           // placeholder="ej: Alundain"
           ref={valor}

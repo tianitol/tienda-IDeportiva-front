@@ -54,17 +54,25 @@ const Register = () => {
           label={"Nombre de usuario"}
           valor={usernameRef}
           tipo={"text"}
+          myTitle={'Ej: Dorian'}
         />
-        <InputFloat label={"Correo"} valor={emailRef} tipo={"email"} />
+        <InputFloat 
+        label={"Correo"} 
+        valor={emailRef} 
+        tipo={"email"}
+        myTitle={'Ej: usuario@email.com'}
+        />
         <InputFloat
           label={"Contraseña"}
           valor={passwordRef}
           tipo={"password"}
+          myTitle={'Debe incluir al menos una mayúscula, una minúscula, un número, un caracter especial y un largo de 6 caracteres.'}
         />
         <InputFloat
           label={"Repita Contraseña"}
           valor={password2Ref}
           tipo={"password"}
+          myTitle={'Debe ser idéntica a la contraseña anterior.'}
         />
 
         <ButtonDep titulo={"Registrar"} onClick={register} />

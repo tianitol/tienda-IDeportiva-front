@@ -37,23 +37,25 @@ const Home = ({ show }) => {
   )
 
   if (show === 'clothes') return (
-  <FiltersClothes/>
-    <div className='card-container'>
+    <>
+      <FiltersClothes />
+      <div className='card-container'>
 
-      {
-        clothes.map((item) => {
-          return (
-            <ProductCard
-              key={item._id}
-              name={item.name}
-              description={item.description}
-              price={item.price}
-              image={item.image}
-              path={`/details/item/${item._id}`} />
-          )
-        })
-      }
-    </div>
+        {
+          clothes.map((item) => {
+            return (
+              <ProductCard
+                key={item._id}
+                name={item.name}
+                description={item.description}
+                price={item.price}
+                image={item.image}
+                path={`/details/item/${item._id}`} />
+            )
+          })
+        }
+      </div>
+    </>
   )
 
   if (show === 'accessories') return (
