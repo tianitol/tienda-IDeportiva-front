@@ -2,9 +2,11 @@ import ProductCard from '../components/ProductCard';
 import {useContext} from 'react';
 import StateContext from '../store/StateContext';
 import Filters from '../components/Filters';
+import FiltersClothes from '../components/FiltersClothes';
+
 const Home = ({show}) => {
 
-const {shoes,filteredShoes, accessories, clothes} = useContext(StateContext)
+const {shoes,filteredShoes, accessories, clothes,filteredClothes } = useContext(StateContext)
 
 // console.log(shoes);
 
@@ -31,11 +33,13 @@ if (show === 'shoes') return (
   </>
 )
 
-if (show ==='clothes') return (
-  <div className='card-container'>
 
+if (show ==='clothes') return (
+  <>
+  <FiltersClothes/>
+  <div className='card-container'>
   {
-    clothes.map((item) => {
+    filteredClothes.map((item) => {
       return (
         <ProductCard
           key={item._id}
@@ -48,6 +52,8 @@ if (show ==='clothes') return (
     })
   }
   </div>
+  </>
+
 )
 
 if (show ==='accessories') return (

@@ -1,10 +1,13 @@
 import { useRef } from "react";
 
 
-const Search = (props) =>{
-    
-    let inputTexto = useRef();
+const SearchC = (props) =>{
 
+    let inputTexto = useRef();
+    
+    const handleClick = () =>{
+        props.filterClothes(inputTexto.current.value)
+    } 
     return(
         <>
         <nav className="avbar bg-body-tertiary">
@@ -12,12 +15,13 @@ const Search = (props) =>{
                 <form className="d-flex" rol="search">
                     <div>
                         <input type="text" ref={inputTexto} className="form-control" placeholder="Buscar" aria-label="Search"/>
-                        <input onClick={()=>props.filterShoes(inputTexto.current.value)} type="button" className="btn btn-primary" value="Buscar" />
+                        <input onClick={handleClick} type="button" className="btn btn-primary" value="Buscar" />
                     </div>
                 </form>
             </div>
         </nav>
         </>
     )
+
 }
-export default Search;
+export default SearchC
