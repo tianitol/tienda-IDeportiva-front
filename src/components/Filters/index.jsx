@@ -4,8 +4,7 @@ import Checkbox from "./Checkbox";
 import Search from "./Search";
 
 const Filters = (props) => {
-  let { shoes, loadEvents, loadFilteredShoes, filteredShoes } =
-    useContext(StateContext);
+  let { shoes,  loadFilteredShoes } = useContext(StateContext);
 
   const obtenerCheckeados = () => {
     let checkeados = document.querySelectorAll("input[type=checkbox]:checked");

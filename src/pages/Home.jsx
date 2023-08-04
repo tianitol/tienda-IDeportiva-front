@@ -2,7 +2,9 @@ import ProductCard from '../components/ProductCard';
 import { useContext } from 'react';
 import StateContext from '../store/StateContext';
 import Filters from '../components/Filters';
+import FiltersClothes from '../components/FiltersClothes';
 import AccessoriesFilters from '../components/AccessoriesFilters';
+
 
 const Home = ({ show }) => {
 
@@ -17,6 +19,7 @@ const Home = ({ show }) => {
         {
           filteredShoes.map((shoe) => {
             return (
+
 
               <ProductCard
                 key={shoe._id}
@@ -34,6 +37,7 @@ const Home = ({ show }) => {
   )
 
   if (show === 'clothes') return (
+  <FiltersClothes/>
     <div className='card-container'>
 
       {
