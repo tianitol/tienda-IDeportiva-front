@@ -48,17 +48,24 @@ function App() {
     <>
       <Router>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/clothes" element={<Home show={"clothes"} />} />
-          <Route path="/shoes" element={<Home show={"shoes"} />} />
-          <Route path="/accessories" element={<Home show={"accessories"} />} />
-
-          <Route path="/login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<h2>La página no existe</h2>} />
-        </Routes>
+        {!document.cookie.includes("tokenUsuario") ? (
+          <Routes>
+            <Route path="*" element={<Login />} />
+          </Routes>
+        ) : (
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/clothes" element={<Home show={"clothes"} />} />
+            <Route path="/shoes" element={<Home show={"shoes"} />} />
+            <Route
+              path="/accessories"
+              element={<Home show={"accessories"} />}
+            />
+            <Route path="register" element={<Register />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<h2>La página no existe</h2>} />
+          </Routes>
+        )}
 
         <Footer />
       </Router>
