@@ -1,10 +1,10 @@
 import NavBar from '../NavBar';
 
+const Header = (props) => {
 
-const Header = () => {
   return (
-    <>
-      <NavBar />
+    <> 
+    <NavBar/> 
     </>
   )
 };

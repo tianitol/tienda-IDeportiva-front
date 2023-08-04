@@ -1,22 +1,26 @@
 import ProductCard from '../components/ProductCard';
 import {useContext} from 'react';
 import StateContext from '../store/StateContext';
-
+import Filters from '../components/Filters';
 const Home = ({show}) => {
 
-const {shoes, accessories, clothes} = useContext(StateContext)
+const {shoes,filteredShoes, accessories, clothes} = useContext(StateContext)
 
 // console.log(shoes);
 
 if (show === 'shoes') return (
+  <>
+  <Filters/>
   <div className='card-container'>
   {
-    shoes.map((shoe) => {
+    filteredShoes.map((shoe) => {
       return (
+        
         <ProductCard
           key={shoe._id}
           name={shoe.name}
           description={shoe.description}
+          gender = {shoe.gender}
           image={shoe.image}
           // path={`/details/${event._id}`} />
           />
@@ -24,6 +28,7 @@ if (show === 'shoes') return (
     })
   }
   </div>
+  </>
 )
 
 if (show ==='clothes') return (
@@ -66,6 +71,7 @@ if (show ==='accessories') return (
 
   return (
     <>
+   
     <div className='card-container'>
     {
         clothes.map((item) => {

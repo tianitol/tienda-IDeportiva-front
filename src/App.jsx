@@ -5,12 +5,14 @@ import "./App.css";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { useContext, useEffect } from "react";
 
+
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/register";
+import Details from "./pages/Details";
 import StateContext from "./store/StateContext";
 import axios from "axios";
 
@@ -52,7 +54,7 @@ function App() {
           <Route path="/clothes" element={<Home show={'clothes'} />} />
           <Route path="/shoes" element={<Home show={'shoes'} />} />
           <Route path="/accessories" element={<Home show={'accessories'} />} />
-
+          <Route path="/details/:id" element={<Details />} />
           <Route path="/login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="/contact" element={<Contact />} />
