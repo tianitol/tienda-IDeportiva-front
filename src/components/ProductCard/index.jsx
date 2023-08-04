@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 
-const ProductCard = ({name, description, image, gender}) => {
+const ProductCard = ({name, description, image, gender, path, price}) => {
     
     return (
         <div className="d-flex justify-content-around">
@@ -14,9 +14,12 @@ const ProductCard = ({name, description, image, gender}) => {
                         {description}
                     </Card.Text>
                     <Card.Text>
+                        ${price}
+                    </Card.Text>
+                    <Card.Text>
                         {gender}
                     </Card.Text>
-                    <Link to={"/details/" /*aca deberia ir el id */} className="button btn btn-primary">Detalle</Link>
+                    <Link to={path} className="button btn btn-primary">Detalle</Link>
                 </Card.Body>
             </Card>
         </div>
