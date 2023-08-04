@@ -52,6 +52,7 @@ function App() {
         {!document.cookie.includes("tokenUsuario") ? (
           <Routes>
             <Route path="*" element={<Login />} />
+            <Route path="register" element={<Register />} />
           </Routes>
         ) : (
           <Routes>
@@ -62,7 +63,6 @@ function App() {
               path="/accessories"
               element={<Home show={"accessories"} />}
             />
-            <Route path="register" element={<Register />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<h2>La página no existe</h2>} />
           </Routes>
