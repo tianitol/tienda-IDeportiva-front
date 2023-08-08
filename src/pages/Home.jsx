@@ -7,8 +7,14 @@ import StateContext from "../store/StateContext";
 import { useContext } from "react";
 
 const Home = ({ show }) => {
-  const { shoes, filteredShoes, accessories, clothes, filteredAccessories } =
-    useContext(StateContext);
+  const {
+    shoes,
+    filteredShoes,
+    accessories,
+    clothes,
+    filteredAccessories,
+    filteredClothes,
+  } = useContext(StateContext);
 
   // console.log(shoes);
 
@@ -39,7 +45,7 @@ const Home = ({ show }) => {
       <>
         <FiltersClothes />
         <div className="card-container">
-          {clothes.map((item) => {
+          {filteredClothes.map((item) => {
             return (
               <ProductCard
                 key={item._id}
@@ -79,7 +85,7 @@ const Home = ({ show }) => {
   return (
     <>
       <div className="card-container">
-        {clothes.map((item) => {
+        {filteredClothes.map((item) => {
           return (
             <ProductCard
               key={item._id}
@@ -91,7 +97,7 @@ const Home = ({ show }) => {
             />
           );
         })}
-        {shoes.map((shoe) => {
+        {filteredShoes.map((shoe) => {
           return (
             <ProductCard
               key={shoe._id}
@@ -103,7 +109,7 @@ const Home = ({ show }) => {
             />
           );
         })}
-        {accessories.map((accessory) => {
+        {filteredAccessories.map((accessory) => {
           return (
             <ProductCard
               key={accessory._id}
