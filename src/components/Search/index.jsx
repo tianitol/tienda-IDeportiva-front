@@ -21,9 +21,7 @@ const Search = (props) => {
                 aria-label="Search"
               />
               <input
-                onClick={() =>
-                  props.filterAccessories(inputTexto.current.value)
-                }
+                onClick={() => props.dataFiltered(inputTexto.current.value)}
                 type="button"
                 className="btn btn-primary"
                 value="Buscar"

@@ -1,5 +1,5 @@
 import CheckboxC from "./CheckboxC";
-import SearchC from "./SearchC";
+import Search from "../Search";
 import StateContext from "../../store/StateContext";
 import { useContext } from "react";
 
@@ -51,10 +51,17 @@ const FiltersClothes = () => {
     }
   };
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        flex: "flex-basis",
+        margin: "1em 0",
+      }}
+    >
       <CheckboxC />
-      <SearchC filterClothes={filterClothes} />
-    </>
+      <Search dataFiltered={filterClothes} />
+    </div>
   );
 };
 

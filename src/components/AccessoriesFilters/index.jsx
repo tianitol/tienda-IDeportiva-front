@@ -1,11 +1,10 @@
-import { useContext } from 'react';
-import StateContext from '../../store/StateContext';
 import Checkbox from "./Checkbox";
-import Search from "./Search";
+import Search from "../Search";
+import StateContext from "../../store/StateContext";
+import { useContext } from "react";
 
 const AccessoriesFilters = (props) => {
-  let { accessories, loadFilteredAccessories } =
-    useContext(StateContext);
+  let { accessories, loadFilteredAccessories } = useContext(StateContext);
 
   const obtenerCheckeados = () => {
     let checkeados = document.querySelectorAll("input[type=checkbox]:checked");
@@ -27,8 +26,8 @@ const AccessoriesFilters = (props) => {
       console.log("Filtra");
     }
     if (checkeados.length > 0) {
-      let accessoriesFilterForCategory = accessoriesFilterForText.filter((accessory) =>
-        checkeados.includes(accessory.category)
+      let accessoriesFilterForCategory = accessoriesFilterForText.filter(
+        (accessory) => checkeados.includes(accessory.category)
       );
       loadFilteredAccessories(accessoriesFilterForCategory);
       console.log(accessoriesFilterForCategory);
@@ -39,10 +38,17 @@ const AccessoriesFilters = (props) => {
   };
 
   return (
-    <>
-      <Checkbox />
-      <Search filterAccessories={filterAccessories} />
-    </>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        flex: "flex-basis",
+        margin: "2% 0",
+      }}
+    >
+      <Checkbox style={{ margin: "1em" }} />
+      <Search dataFiltered={filterAccessories} />
+    </div>
   );
 };
 export default AccessoriesFilters;

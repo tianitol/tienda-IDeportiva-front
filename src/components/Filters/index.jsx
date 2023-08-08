@@ -1,10 +1,10 @@
-import { useContext } from 'react';
-import StateContext from '../../store/StateContext';
 import Checkbox from "./Checkbox";
-import Search from "./Search";
+import Search from "../Search";
+import StateContext from "../../store/StateContext";
+import { useContext } from "react";
 
 const Filters = (props) => {
-  let { shoes,  loadFilteredShoes } = useContext(StateContext);
+  let { shoes, loadFilteredShoes } = useContext(StateContext);
 
   const obtenerCheckeados = () => {
     let checkeados = document.querySelectorAll("input[type=checkbox]:checked");
@@ -38,10 +38,17 @@ const Filters = (props) => {
   };
 
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        flex: "flex-basis",
+        margin: "1em 0",
+      }}
+    >
       <Checkbox />
-      <Search filterShoes={filterShoes} />
-    </>
+      <Search dataFiltered={filterShoes} />
+    </div>
   );
 };
 export default Filters;
